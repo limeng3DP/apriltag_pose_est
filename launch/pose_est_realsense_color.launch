@@ -1,0 +1,34 @@
+<launch>
+  <node pkg="apriltags_pose_est" type="apriltags_pose_est_node" name="camera_tracking" output="screen">
+      <param name="apriltag/tag_codes" value="36h11"/>
+      <param name="apriltag/tag_size" value="0.088"/>
+      <param name="apriltag/tag_spacing" value="0.0264"/>
+      <param name="apriltag/tags_row_num" value="6"/>
+      <param name="apriltag/tags_col_num" value="6"/>
+
+      <param name="resolution/height" value="1080"/>
+      <param name="resolution/width" value="1920"/>
+
+      <param name="intrinsic/fx" value="1384.712158203125"/>
+      <param name="intrinsic/fy" value="1387.21728515625"/>
+      <param name="intrinsic/cx" value="946.039306640625"/>
+      <param name="intrinsic/cy" value="544.1865234375"/>
+
+      <param name="distortion/k1" value="0.07757927477359772"/>
+      <param name="distortion/k2" value="-0.13458965718746185"/>
+      <param name="distortion/p1" value="9.600068005966023e-05"/>
+      <param name="distortion/p2" value="0.0009631674620322883"/>
+      <param name="distortion/k3" value="0.0"/>
+
+      <param name="image/scale/width" value="4.0"/>
+      <param name="image/scale/height" value="4.0"/>
+
+      <param name="ba_refine" value="true"/>
+
+      <param name="win_keyframe_size" value="15"/>
+
+
+      <remap from="~image" to="/camera/color/image_raw" />
+  </node>
+
+</launch>
